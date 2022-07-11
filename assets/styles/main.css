@@ -1,0 +1,247 @@
+/* VARIABLES -------------------------------- */
+/* VARIABLES -------------------------------- */
+:root {
+    /* --font-headings: 'Qatar2022', sans-serif; */
+    --font-outfit: 'Outfit', sans-serif;
+
+    --color-white: #FFFFFF;
+
+
+    --color-dark: #0b0b0b;
+    --color-black: #000000;
+    --color-red: #eb2328;
+
+
+    --color-temp1: #1E1C21;
+    --color-temp1-accent: #382E46;
+    --color-temp1-highlight: #27242c;
+
+}
+
+
+
+/* FONTS -------------------------------- */
+/* FONTS -------------------------------- */
+/* @font-face {
+    font-family: 'Qatar2022';
+    src: url('../fonts/qatar2022/Qatar2022-Bold.woff2') format('woff2'),
+        url('../fonts/qatar2022/Qatar2022-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Qatar2022';
+    src: url('../fonts/qatar2022/Qatar2022-Heavy.woff2') format('woff2'),
+        url('../fonts/qatar2022/Qatar2022-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+
+/* RESET -------------------------------- */
+/* RESET -------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;  
+  outline: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* GLOBAL -------------------------------- */
+/* GLOBAL -------------------------------- */
+html {
+    height: 100%;
+}
+body {
+    background-color: var(--color-temp1);
+    color: var(--color-white);
+    font-family: var(--font-outfit);
+    font-size: 16px;
+    overflow: hidden;
+}
+body.loaded {
+    overflow: auto;
+}
+body.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+button {
+    font-family: var(--font-outfit);
+    font-size: 1em;
+}
+
+
+
+/* LANDING RENDER -------------------------------- */
+/* LANDING RENDER -------------------------------- */
+section.landing-render {
+    height: 350vh;
+}
+section.landing-render canvas {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* LOADING OVERLAY -------------------------------- */
+/* LOADING OVERLAY -------------------------------- */
+section.loading-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;   
+    background-color: var(--color-dark);
+    opacity: 1;
+    visibility: visible;
+    transition: 1s 250ms;
+}
+section.loading-overlay svg {
+    position: absolute;
+    /* height: 22.7%; */
+    height: 21%;
+    fill: none;
+    stroke-dasharray: 250;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke: var(--color-red);
+    overflow: visible;
+    animation: loading-overlay-logo 20s infinite linear;
+    transition: 450ms;
+}
+section.loading-overlay h1 {
+    position: absolute;
+    bottom: 2em;
+    color: rgb(255 255 255 / 0.1);
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    transition: 250ms;
+}
+body.loaded section.loading-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+body.loaded section.loading-overlay svg {
+    opacity: 0;
+}
+body.loaded-fully section.loading-overlay svg {
+    animation-play-state: paused;
+}
+body.loaded section.loading-overlay h1 {
+    opacity: 0;
+}
+
+
+
+/* HEADER -------------------------------- */
+/* HEADER -------------------------------- */
+header {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 3em;
+    padding: 0 3.5em;
+}
+header > nav {
+    position: relative;
+    background-color: rgb(0 0 0 / 0.25);
+    border-radius: 2.5em;
+}
+header > nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: fit-content;
+    padding: 0.3em;
+    z-index: 2;
+}
+header > nav ul li button.active {
+    color: var(--color-white);
+} 
+header > nav ul li button {
+    padding: 0.4em 1em;
+    background-color: transparent;
+    color: rgb(255 255 255 / 0.5);
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: 350ms color;
+}
+header > nav ul li button:hover {
+    color: var(--color-white);
+}
+header > nav div {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: calc(100% - 0.6em);
+    width: 0;
+    background-color: rgb(255 255 255 / 0.1);
+    background-color: var(--color-temp1-highlight);
+    border-radius: 2em;
+    transform: translateY(-50%);
+    transition: 450ms;
+}
+header > span {
+    flex: 1;
+}
+header > span:last-of-type {
+    text-align: right;
+}
+
+
+main section.dashboard {
+
+}
+main section.dashboard > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-auto-rows: 4rem;
+    grid-gap: 1em;
+    margin: 0;
+}
+main section.dashboard > ul li {
+    background-color: red;
+    /* aspect-ratio: 1 / 1; */
+}
+
+
+
+
+
+
+
+/* KEYFRAMES -------------------------------- */
+/* KEYFRAMES -------------------------------- */
+@keyframes loading-overlay-logo {
+    to {
+        stroke-dashoffset: 3000;
+    }
+}
