@@ -420,7 +420,8 @@ main section.dashboard > ul > li.grid-item-project.large-contain-background-imag
 main section.dashboard > ul > li.grid-item-project.large-contain-background-image > img {
     object-fit: contain;
 }
-main section.dashboard > ul > li.grid-item-project.large-background-image > a {
+main section.dashboard > ul > li.grid-item-project.large-background-image > a,
+main section.dashboard > ul > li.grid-item-project.large-contain-background-image > a {
     background-color: rgb(0 0 0 / 0.15);
     border: 2px solid rgb(255 255 255 / 0.2);
     z-index: 1;
