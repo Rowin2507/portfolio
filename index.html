@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="author" content="Rowin Schmidt">
-	<meta name="description" content="...">
+	<meta name="description" content="Welkom op mijn portfolio! Ik ben Rowin Schmidt, een designer, developer en creatieve geest uit Amsterdam. Ik houd mij bezig met front-end development van websites en (web) apps, met het designen van UI / UX en met het maken van 3D animaties en renders.">
     <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Rowin Schmidt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,10 +12,11 @@
     <link href="assets/styles/main.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="landing-page">
     <section class="landing-render">
         <!-- 3D VISUAL -->
         <canvas></canvas>
+        <strong>Scrollen maar..</strong>
     </section>
     <section class="loading-overlay">
         <!-- LOADING ANIMATION -->
@@ -23,9 +24,10 @@
         <h1>Rowin Schmidt</h1>
     </section>
 
-
     <header>
-        <span>logo</span>
+        <div>
+            <svg viewBox="0 0 550 387"><path d="M402.68,194.129l14.413,0.125c76.378,0,80.87,108.439,0,108.439h-50.319l-19.48-29.348h69.8 c39.536,0,35.942-48.541,4.188-48.541H402.68c-72.46,0-70.052-108.42,4.816-108.42h122.346L550,0.173L242.709,116.385h34.208 c57.257,0,101.231,73.089,28.144,119.814l61.237,107.69l116.591,43.198l41.758-240.745H403.309 C373.962,146.343,372.164,194.254,402.68,194.129z"></path> <path d="M284.195,208.631c38.243,0.647,37.057-62.288-7.278-62.288H163.494L0,208.174l318.408,117.973 l-67.855-117.516H284.195z"></path></svg>
+        </div>
         <nav>
             <ul>
                 <li>
@@ -43,27 +45,217 @@
             </ul>
             <div> <!-- ACTIVE MARKER --> </div>
         </nav>
-        <span>contact</span>
+        <div>
+            <a href="mailto:rowinschmidt@gmail.com">Contact</a>
+        </div>
     </header>
 
     <main>
         <section class="dashboard">
             <ul>
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
-                <li>item4</li>
-                <li>item5</li>
-                <li>item6</li>
+                <li class="grid-item-about">
+                    <div>
+                        <img src="assets/images/content/Rowin-Schmidt.jpg" alt="Een foto van mij (Rowin Schmidt).">
+                        <h2>Hallo daar 👋🏻, welkom op mijn portfolio!</h2>
+                    </div>
+                    <p>Ik ben <strong>Rowin</strong>, een designer, developer en creatieve geest uit Amsterdam. Op dit moment zit ik in het derde jaar van CMD (Communication and Multimedia Design) op de HvA. Ik houd mij bezig met front-end development van websites en (web) apps, met het designen van UI / UX en met het maken van 3D animaties en renders.</p>
+                </li>
+                <li class="grid-item-1x1 grid-item-about">
+                    <!-- <div class="mapouter" style="filter: invert(100%)"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=koog aan de zaan&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.kokagames.com/fnf-friday-night-funkin-mods/">FNF</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div> -->
+                    <!-- TIJDELIJK -->
+                </li>
+                <li class="grid-item-project large-background-image">
+                    <img src="assets/images/projects/qatar-2022/qatar2022-visual.png" alt="Qatar 2022 project visual">
+                    <a href="qatar-2022.html">
+                        <span>Qatar 2022</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
+                <li class="grid-item-1x1 grid-item-extra">
+                    <div> <!-- ALBUM COVER BACKGROUND --> </div>
+                    <strong>Onlangs beluisterd</strong>
+                    <a href="https://open.spotify.com/track/5dVchPeZujXwRlkTG9fR1C?si=475096bcd1a443d2" target="_blank">
+                        <img class="spotify-placeholder" src="https://i.scdn.co/image/ab67616d0000b273361306691aa9a1a0c8141fa9" alt="Silence of Reality">
+                        <h4 class="spotify-placeholder">Silence of Reality</h4>
+                        <h3 class="spotify-placeholder">Silence of Reality</h3>
+                        <strong class="spotify-placeholder">Serhat Durmus</strong>
+                    </a>
+                </li>
+                <li class="grid-item-1x1 grid-item-about">
+                    <ul>
+                        <li>
+                            <a href="https://api.whatsapp.com/send?phone=31624902088" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 147.77 148.44"><defs><style>.cls-1,.cls-2{fill:#fff;}.cls-2{fill-rule:evenodd;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M126.24,21.57a73.58,73.58,0,0,0-115.8,88.75L0,148.44l39-10.23a73.5,73.5,0,0,0,35.16,8.95h0a73.58,73.58,0,0,0,52-125.59Zm-52,113.17h0a61.1,61.1,0,0,1-31.12-8.52l-2.24-1.33L17.67,131l6.17-22.56-1.45-2.31A61.16,61.16,0,1,1,74.2,134.74Z"/><path class="cls-2" d="M55.81,42.8c-1.38-3.06-2.83-3.12-4.14-3.17l-3.52-.05a6.77,6.77,0,0,0-4.91,2.3,20.64,20.64,0,0,0-6.43,15.33c0,9.05,6.59,17.79,7.5,19S57,96.61,75.72,104c15.53,6.12,18.69,4.9,22.06,4.6s10.88-4.45,12.41-8.74,1.53-8,1.07-8.74-1.68-1.23-3.52-2.15-10.88-5.37-12.57-6-2.91-.92-4.13.92-4.75,6-5.82,7.21-2.15,1.38-4,.46a50.18,50.18,0,0,1-14.78-9.12A56.17,56.17,0,0,1,56.22,69.71c-1.07-1.84-.11-2.84.81-3.76s1.84-2.14,2.76-3.22a12.77,12.77,0,0,0,1.84-3.06,3.39,3.39,0,0,0-.16-3.22c-.46-.92-4-10-5.66-13.65"/></g></g></svg>
+                                <strong>WhatsApp</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/rowin-schmidt-764663152" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 510.87"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Layer_1" data-name="Layer 1"><path class="cls-1" d="M119.18,164.15H16.4a8.26,8.26,0,0,0-8.26,8.26v330.2a8.25,8.25,0,0,0,8.26,8.26H119.18a8.26,8.26,0,0,0,8.26-8.26V172.41A8.26,8.26,0,0,0,119.18,164.15Z"/><path class="cls-1" d="M67.82,0A67.77,67.77,0,1,0,135.6,67.75,67.86,67.86,0,0,0,67.82,0Z"/><path class="cls-1" d="M380.62,155.94c-41.28,0-71.8,17.75-90.31,37.92V172.41a8.26,8.26,0,0,0-8.26-8.26H183.62a8.26,8.26,0,0,0-8.26,8.26v330.2a8.26,8.26,0,0,0,8.26,8.26H286.18a8.26,8.26,0,0,0,8.26-8.26V339.24c0-55.05,14.95-76.5,53.33-76.5,41.79,0,45.12,34.38,45.12,79.33V502.62a8.25,8.25,0,0,0,8.25,8.25h102.6a8.25,8.25,0,0,0,8.26-8.25V321.49C512,239.63,496.39,155.94,380.62,155.94Z"/></g></g></svg>
+                                <strong>LinkedIn</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/rowin2507" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.78 117.79"><defs><style>.cls-1,.cls-2{fill:#fff;}.cls-1{fill-rule:evenodd;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Layer_1" data-name="Layer 1"><path class="cls-1" d="M60.39,0A60.39,60.39,0,0,0,41.3,117.69c3,.56,4.12-1.31,4.12-2.91,0-1.44-.05-6.19-.08-11.24C28.54,107.19,25,96.42,25,96.42c-2.75-7-6.71-8.84-6.71-8.84-5.48-3.75.41-3.67.41-3.67,6.07.43,9.26,6.22,9.26,6.22,5.39,9.23,14.13,6.57,17.57,5,.55-3.9,2.11-6.56,3.84-8.07C36,85.55,21.85,80.37,21.85,57.23A23.35,23.35,0,0,1,28.08,41c-.63-1.52-2.7-7.66.58-16,0,0,5.07-1.62,16.61,6.19a57.36,57.36,0,0,1,30.25,0C87,23.42,92.11,25,92.11,25c3.28,8.32,1.22,14.46.59,16a23.34,23.34,0,0,1,6.21,16.21c0,23.2-14.12,28.3-27.57,29.8,2.16,1.87,4.09,5.55,4.09,11.18,0,8.08-.06,14.59-.06,16.57,0,1.61,1.08,3.49,4.14,2.9A60.39,60.39,0,0,0,60.39,0Z"/><path class="cls-2" d="M22.87,86.7c-.13.3-.6.39-1,.19s-.69-.61-.55-.91.61-.39,1-.19.69.61.54.91Z"/><path class="cls-2" d="M25.32,89.43c-.29.27-.85.14-1.24-.28a.92.92,0,0,1-.17-1.25c.3-.27.84-.14,1.24.28s.47,1,.17,1.25Z"/><path class="cls-2" d="M27.7,92.91c-.37.26-1,0-1.35-.52s-.37-1.18,0-1.44,1,0,1.35.51.37,1.19,0,1.45Z"/><path class="cls-2" d="M31,96.27A1.13,1.13,0,0,1,29.41,96c-.53-.49-.68-1.18-.34-1.54s1-.27,1.56.23.68,1.18.33,1.54Z"/><path class="cls-2" d="M35.46,98.22c-.15.47-.82.69-1.51.49s-1.13-.76-1-1.24.82-.7,1.51-.49,1.13.76,1,1.24Z"/><path class="cls-2" d="M40.4,98.58c0,.5-.56.91-1.28.92s-1.3-.38-1.31-.88.56-.91,1.29-.92,1.3.39,1.3.88Z"/><path class="cls-2" d="M45,97.8c.09.49-.41,1-1.12,1.12s-1.35-.17-1.44-.66.42-1,1.12-1.12,1.35.17,1.44.66Z"/></g></g></svg>
+                                <strong>GitHub</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:rowinschmidt@gmail.com" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M11,16a5,5,0,1,1,5-5A5,5,0,0,1,11,16Zm0-8a3,3,0,1,0,3,3A3,3,0,0,0,11,8Z"/><path class="cls-1" d="M11,22A11,11,0,1,1,22,11v1a4,4,0,0,1-8,0V7a1,1,0,0,1,2,0v5a2,2,0,0,0,4,0V11a9,9,0,1,0-3.53,7.15,1,1,0,0,1,1.22,1.58A11,11,0,0,1,11,22Z"/></g></g></svg>
+                                <strong>Mail</strong>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="grid-item-project large-background-image">
+                    <img src="assets/images/projects/ruby/ruby-visual.png" alt="Ruby project visual">
+                    <a href="ruby.html">
+                        <span>Ruby</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
+                <li class="grid-item-about">
+                    <p>Ik probeer altijd het meeste uit mijzelf te halen door telkens nieuwe uitdagingen te creëren en zo telkens weer nieuwe en interessante vaardigheden te ontwikkelen.</p>
+                    <p>Tools en programmeertalen waar ik veel mee werk:</p>
+                    <ul>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/Adobe-Illustrator.svg" alt="Adobe Illustrator logo">
+                            </figure>
+                            <strong>Adobe Illustrator</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/Adobe-XD.svg" alt="Adobe XD logo">
+                            </figure>
+                            <strong>Adobe XD</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/Adobe-Photoshop.svg" alt="Adobe Photoshop logo">
+                            </figure>
+                            <strong>Adobe Photoshop</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/Blender.svg" alt="Blender logo">
+                            </figure>
+                            <strong>Blender</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/HTML5.svg" alt="HTML5 logo">
+                            </figure>
+                            <strong>HTML</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/CSS3.svg" alt="CSS3 logo">
+                            </figure>
+                            <strong>CSS</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/JavaScript.svg" alt="JavaScript logo">
+                            </figure>
+                            <strong>JavaScript</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/Figma.svg" alt="Figma logo">
+                            </figure>
+                            <strong>Figma</strong>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/content/Sketch.svg" alt="Sketch logo">
+                            </figure>
+                            <strong>Sketch</strong>
+                        </li>
+                        <li> <!-- SAFARI BUG FIX --> </li>
+                    </ul>
+                </li>
+                <li class="grid-item-1x1 grid-item-extra">
+                    <time>Zaterdag</time>
+                    <h3>25</h3>
+                    <span>Vandaag</span>
+                    <ol>
+                        <li>
+                            <h4>Stageplek zoeken</h4>
+                            <time>Hele dag</time>
+                        </li>
+                        <li>
+                            <h5>Nog 1 activiteit</h5>
+                        </li>
+                    </ol>
+                </li>
+                <li class="grid-item-project">
+                    <a href="#">
+                        <span>Nintendo??</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
+                <li class="grid-item-1x1 grid-item-about">
+                    <div>
+                        <h2>Terug naar de toekomst..</h2>
+                        <p>Hoe het voor mij allemaal begon en hoe het nu gaat binnen mijn vakgebied.</p>
+                        <!-- <h2>Toen en nu..</h2> -->
+                        <!-- <p>Hoe het voor mij allemaal begon, hoe het nu gaat en hoe ik mijzelf verder wil ontwikkelen.</p> -->
+                    </div>
+                    <a href="#">
+                        <span>Lees meer</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
+                <li class="grid-item-project">
+                    <a href="#">
+                        <span>BD Kaartjes??</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
+                <li class="grid-item-project">
+                    <a href="#">
+                        <span>Heel Holland Bakt??</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
+                <li class="grid-item-1x1 grid-item-project">
+                    <a href="#">
+                        <span>Formule 1??</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </li>
             </ul>
         </section>
     </main>
 
-
-    <h1>WHEEW</h1>
-
-
-
+    <footer>
+        <ul>
+            <li>
+                <h2>De bodem bereikt</h2>
+                <p>Maar niet per se het einde..</p>
+            </li>
+            <li>
+                <button>Terug naar boven</button>
+            </li>
+            <li>
+                <a href="#">
+                    <ul>
+                        <li>
+                            <strong>Willekeurig project bekijken</strong>
+                            <span>Een aangename verrassing</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line> <polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+        <p>Copyright © 2022 Rowin Schmidt.</p>
+    </footer>
 
     <script src="assets/scripts/main.js"></script>
 </body>
