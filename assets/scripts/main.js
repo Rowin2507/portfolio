@@ -229,6 +229,42 @@ if (body.classList.contains("landing-page")) {
 
 
 
+  // GOOGLE MAPS API --------------------------------
+  // GOOGLE MAPS API --------------------------------
+  google.maps.event.addDomListener(window, 'load', init);
+        
+  function init() {
+      // Basic options for a simple Google Map
+      // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+      var mapOptions = {
+          // How zoomed in you want the map to start at (always required)
+          zoom: 15,
+
+          // The latitude and longitude to center the map (always required)
+          center: new google.maps.LatLng(52.460631, 4.805527), // Koog aan de Zaan
+
+          // How you would like to style the map. 
+          // This is where you would paste any style found on Snazzy Maps.
+          styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"weight":2},{"gamma":0.84}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#1a3541"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#1e1c21"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry.fill","stylers":[{"color":"#ff0000"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#27242c"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#414241"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#1e1c21"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"transit","elementType":"geometry.fill","stylers":[{"color":"#382e46"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#193341"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#060606"}]}]
+      };
+
+      // Get the HTML DOM element that will contain your map 
+      // We are using a div with id="map" seen below in the <body>
+      var mapElement = document.querySelector("main section.dashboard > ul > li:nth-of-type(2) div");
+
+      // Create the Google Map using our element and options defined above
+      var map = new google.maps.Map(mapElement, mapOptions);
+
+      // Let's also add a marker while we're at it
+      // var marker = new google.maps.Marker({
+      //     position: new google.maps.LatLng(40.6700, -73.9400),
+      //     map: map,
+      //     title: 'Snazzy!'
+      // });
+  }
+
+
+
   // GET DATE FROM CLIENT --------------------------------
   // GET DATE FROM CLIENT --------------------------------
   var dayElement = document.querySelector("main section.dashboard > ul > li:nth-of-type(8) > time");
