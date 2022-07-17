@@ -28,7 +28,7 @@ window.addEventListener('load', (e) => {
 var proctLinkFooter = document.querySelector("footer > ul > li:last-of-type > a");
 var projects = ["qatar-2022", "ruby"];
 var randomProject = projects[Math.floor(Math.random() * projects.length)];
-proctLinkFooter.href = randomProject + ".html";
+proctLinkFooter.href = "/project/" + randomProject + ".html";
 
 
 
