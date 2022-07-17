@@ -159,7 +159,8 @@ if (body.classList.contains("landing-page")) {
   const canvasSection = document.querySelector("section.landing-render");
   const canvas = document.querySelector("section.landing-render canvas");
   const canvasText = document.querySelector("section.landing-render strong");
-  const context = canvas.getContext("2d");
+  const context = canvas.getContext("2d", { alpha: false });
+  // context.render(context.offscreenContext);
 
   const frameCount = 126;
   const currentFrame = index => (
@@ -184,7 +185,8 @@ if (body.classList.contains("landing-page")) {
 
   const updateImage = index => {
     img.src = currentFrame(index);
-    context.drawImage(img, 0, 0);
+    context.render(img, 0, 0);
+    // context.drawImage(img, 0, 0);
   }
 
   window.addEventListener('scroll', () => {  
