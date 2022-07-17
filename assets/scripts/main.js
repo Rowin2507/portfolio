@@ -26,7 +26,7 @@ window.addEventListener('load', (e) => {
 // FOOTER RANDOM PROJECT LINK --------------------------------
 // FOOTER RANDOM PROJECT LINK --------------------------------
 var proctLinkFooter = document.querySelector("footer > ul > li:last-of-type > a");
-var projects = ["qatar-2022", "ruby"];
+var projects = ["qatar-2022", "ruby", "card-deck"];
 var randomProject = projects[Math.floor(Math.random() * projects.length)];
 proctLinkFooter.href = "/project/" + randomProject + ".html";
 
@@ -81,7 +81,7 @@ if (body.classList.contains("content-page")) {
     if (history.length > 2) {
         history.back();
     } else {
-        window.location.href = "index.html";
+        window.location.href = "/";
     }
   }
 
@@ -185,7 +185,7 @@ if (body.classList.contains("landing-page")) {
 
   const updateImage = index => {
     img.src = currentFrame(index);
-    context.render(img, 0, 0);
+    // context.render(img, 0, 0);
     // context.drawImage(img, 0, 0);
   }
 

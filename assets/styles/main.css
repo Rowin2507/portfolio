@@ -407,7 +407,8 @@ main section.dashboard > ul > li.grid-item-project {
     justify-content: flex-end;
     padding: 1.5em;
 }
-main section.dashboard > ul > li.grid-item-project.large-background-image > img {
+main section.dashboard > ul > li.grid-item-project.large-background-image > img,
+main section.dashboard > ul > li.grid-item-project.large-contain-background-image > img {
     position: absolute;
     left: 0;
     top: 0;
@@ -415,6 +416,9 @@ main section.dashboard > ul > li.grid-item-project.large-background-image > img 
     width: 100%;
     object-fit: cover;
     z-index: 0;
+}
+main section.dashboard > ul > li.grid-item-project.large-contain-background-image > img {
+    object-fit: contain;
 }
 main section.dashboard > ul > li.grid-item-project.large-background-image > a {
     background-color: rgb(0 0 0 / 0.15);
@@ -1093,7 +1097,18 @@ main section.project-details-grid.grid-layout-3 ul li:nth-of-type(3),
 main section.project-details-grid.grid-layout-3 ul li:nth-of-type(4) {
     grid-row: span 2;
 }
-
+/* GRID LAYOUT 4 (5 ITEMS)*/
+main section.project-details-grid.grid-layout-4 ul li:nth-of-type(1) {
+    grid-row: span 2;
+}
+main section.project-details-grid.grid-layout-4 ul li:nth-of-type(3),
+main section.project-details-grid.grid-layout-4 ul li:nth-of-type(4) {
+    aspect-ratio: 1;
+}
+main section.project-details-grid.grid-layout-4 ul li:nth-of-type(2),
+main section.project-details-grid.grid-layout-4 ul li:nth-of-type(5) {
+    grid-column: span 2;
+}
 
 main section.project-details-grid ul li img {
     height: 100%;
