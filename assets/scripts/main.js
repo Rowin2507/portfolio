@@ -28,7 +28,8 @@ window.addEventListener('load', (e) => {
 var proctLinkFooter = document.querySelector("footer > ul > li:last-of-type > a");
 var projects = ["qatar-2022", "ruby", "card-deck"];
 var randomProject = projects[Math.floor(Math.random() * projects.length)];
-proctLinkFooter.href = "/project/" + randomProject + ".html";
+// proctLinkFooter.href = "/project/" + randomProject + ".html";
+proctLinkFooter.href = "/portfolio/project/" + randomProject + ".html";
 
 
 
@@ -82,6 +83,7 @@ if (body.classList.contains("content-page")) {
         history.back();
     } else {
         window.location.href = "/";
+        // window.location.href = "https://rowin2507.github.io/portfolio/";
     }
   }
 
