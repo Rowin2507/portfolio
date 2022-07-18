@@ -1040,12 +1040,47 @@ main section.project-details-info > section:first-of-type p {
     margin-top: 0.35em;
     color: var(--color-darkish-lighter);
 }
+main section.project-details-info > section:first-of-type > span {
+    display: block;
+    margin-top: 1em;
+    color: var(--color-darkish-lighter);
+}
 main section.project-details-info > section:last-of-type p {
     line-height: 1.45em;
     margin-bottom: 1em;
 }
 main section.project-details-info > section:last-of-type p:last-of-type {
     margin-bottom: 0;
+}
+main section.project-details-info > section:last-of-type p a {
+    position: relative;
+    background: -webkit-linear-gradient(-45deg, var(--color-gradient-primary), var(--color-gradient-secondary), var(--color-gradient-primary));
+    background-size: 200%;
+    background-position: top left;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 850ms ease;
+}
+main section.project-details-info > section:last-of-type p a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(90deg, var(--color-gradient-primary) 0%, var(--color-gradient-secondary) 50%, var(--color-gradient-primary) 100%);
+    background-size: 200%;
+    background-position: center left;
+    border-radius: 0.1em;
+    height: 0.1em;
+    transition: 850ms ease;
+}
+main section.project-details-info > section:last-of-type p a:hover {
+    background-position: bottom right;
+}
+main section.project-details-info > section:last-of-type p a:hover::after {
+    background-position: center right;
 }
 main section.project-details-grid {
     margin: 4em auto 0em auto;
@@ -1110,6 +1145,30 @@ main section.project-details-grid.grid-layout-4 ul li:nth-of-type(2),
 main section.project-details-grid.grid-layout-4 ul li:nth-of-type(5) {
     grid-column: span 2;
 }
+/* GRID LAYOUT 5 (5 ITEMS)*/
+main section.project-details-grid.grid-layout-5 ul li:nth-of-type(1) {
+    grid-row: span 2;
+}
+main section.project-details-grid.grid-layout-5 ul li:nth-of-type(3),
+main section.project-details-grid.grid-layout-5 ul li:nth-of-type(5) {
+    aspect-ratio: 1;
+}
+main section.project-details-grid.grid-layout-5 ul li:nth-of-type(2),
+main section.project-details-grid.grid-layout-5 ul li:nth-of-type(4) {
+    grid-column: span 2;
+}
+/* GRID LAYOUT 6 (5 ITEMS)*/
+main section.project-details-grid.grid-layout-6 ul li:nth-of-type(1) {
+    grid-row: span 2;
+}
+main section.project-details-grid.grid-layout-6 ul li:nth-of-type(2),
+main section.project-details-grid.grid-layout-6 ul li:nth-of-type(4) {
+    aspect-ratio: 1;
+}
+main section.project-details-grid.grid-layout-6 ul li:nth-of-type(3),
+main section.project-details-grid.grid-layout-6 ul li:nth-of-type(5) {
+    grid-column: span 2;
+}
 
 main section.project-details-grid ul li img {
     height: 100%;
@@ -1124,6 +1183,9 @@ main section.project-details-grid ul li.full-image img {
 }
 
 /* LONG ABOUT ME TEXT ---------- */
+
+
+
 
 
 
