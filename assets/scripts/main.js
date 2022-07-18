@@ -82,8 +82,8 @@ if (body.classList.contains("content-page")) {
     if (history.length > 2) {
         history.back();
     } else {
-        window.location.href = "/";
-        // window.location.href = "https://rowin2507.github.io/portfolio/";
+        // window.location.href = "/";
+        window.location.href = "/portfolio/";
     }
   }
 
