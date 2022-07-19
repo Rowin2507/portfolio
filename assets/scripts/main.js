@@ -28,7 +28,7 @@ window.addEventListener('load', (e) => {
 var proctLinkFooter = document.querySelector("footer > ul > li:last-of-type > a");
 var projects = ["qatar-2022", "ruby", "card-deck", "nintendo", "formule-1", "heel-holland-bakt"];
 var randomProject = projects[Math.floor(Math.random() * projects.length)];
-// proctLinkFooter.href = "/project/" + randomProject + ".html";
+proctLinkFooter.href = "/project/" + randomProject + ".html";
 proctLinkFooter.href = "/portfolio/project/" + randomProject + ".html";
 
 
@@ -153,83 +153,94 @@ if (body.classList.contains("landing-page")) {
       navMarker.style.width = navItems[0].offsetWidth + "px";
   });
 
+  
 
-
-  // LANDING RENDER CANVAS --------------------------------
-  // LANDING RENDER CANVAS --------------------------------
-  const html = document.documentElement;
-  const canvasSection = document.querySelector("section.landing-render");
-  const canvas = document.querySelector("section.landing-render canvas");
-  const canvasText = document.querySelector("section.landing-render strong");
-  const context = canvas.getContext("2d", { alpha: false });
-  // context.render(context.offscreenContext);
-
-  const frameCount = 126;
-  const currentFrame = index => (
-      `assets/images/animation/${index.toString().padStart(4, '0')}.jpg`
-  )
-
-  const preloadImages = () => {
-    for (let i = 1; i < frameCount; i++) {
-      const img = new Image();
-      img.src = currentFrame(i);
-    }
-  };
-
-  const img = new Image()
-  img.src = currentFrame(1);
-  canvas.width = 2560;
-  canvas.height = 1080;
-
-  img.onload=function(){
-    context.drawImage(img, 0, 0);
-  }
-
-  const updateImage = index => {
-    img.src = currentFrame(index);
-    // context.render(img, 0, 0);
-    // context.drawImage(img, 0, 0);
-  }
-
-  window.addEventListener('scroll', () => {  
-    const scrollTop = html.scrollTop;
-    const maxScrollTop = 3500 - window.innerHeight;
-    // const maxScrollTop = html.scrollHeight - window.innerHeight;
-    const scrollFraction = scrollTop / maxScrollTop;
-    const frameIndex = Math.min(
-      frameCount - 1,
-      Math.ceil(scrollFraction * frameCount)
-    );
-    
-    requestAnimationFrame(() => updateImage(frameIndex + 1));
-    
-    // SCROLL HINTS
-    if (frameIndex < 25) {
-      canvasText.textContent = "Scrollen maar..";
-    } 
-    if (frameIndex > 25) {
-      canvasText.textContent = "Ja, dit gaat goed";
-    } 
-    if (frameIndex > 75) {
-      canvasText.textContent = "Nog een beetje meer";
-    } 
-    if (frameIndex > 115) {
-      canvasText.textContent = "De laptop is bereikt!";
-      // canvasText.textContent = "De interface is bereikt!";
-      // canvasText.textContent = "Bijna daar..";
-    } 
-
-    // HIDE CANVAS IF SCROLLED TO LAST FRAME
-    if (frameIndex == (frameCount - 1)) {
-      canvasSection.classList.add("hidden");
-    } else {
-      canvasSection.classList.remove("hidden");
+  // DOUBLE COLUMN - SMALL TABLET 
+  if (windowWidth < 1000) {
+    var landingVideo = document.querySelector("section.landing-render video");
+    var landingVideoWrapper = document.querySelector("section.landing-render");
+    // alert("TABLET of kleiner");
+    landingVideo.addEventListener("ended",videoFinished,false);
+    function videoFinished(e) {
+      landingVideoWrapper.classList.add("finished");
     }
 
-    console.log(frameIndex);
-  });
+  // ALL COLUMNS - LAPTOP / DESKTOP
+  } else {
+    // LANDING RENDER CANVAS --------------------------------
+    // LANDING RENDER CANVAS --------------------------------
+    const html = document.documentElement;
+    const canvasSection = document.querySelector("section.landing-render");
+    const canvas = document.querySelector("section.landing-render canvas");
+    const canvasText = document.querySelector("section.landing-render strong");
+    const context = canvas.getContext("2d", { alpha: false });
+    // context.render(context.offscreenContext);
 
-  preloadImages();
+    const frameCount = 126;
+    const currentFrame = index => (
+        `assets/images/animation/${index.toString().padStart(4, '0')}.jpg`
+    )
+
+    const preloadImages = () => {
+      for (let i = 1; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+      }
+    };
+
+    const img = new Image()
+    img.src = currentFrame(1);
+    canvas.width = 2560;
+    canvas.height = 1080;
+
+    img.onload=function(){
+      context.drawImage(img, 0, 0);
+    }
+
+    const updateImage = index => {
+      img.src = currentFrame(index);
+      // context.render(img, 0, 0);
+      // context.drawImage(img, 0, 0);
+    }
+
+    window.addEventListener('scroll', () => {  
+      const scrollTop = html.scrollTop;
+      const maxScrollTop = 3500 - window.innerHeight;
+      // const maxScrollTop = html.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollTop / maxScrollTop;
+      const frameIndex = Math.min(
+        frameCount - 1,
+        Math.ceil(scrollFraction * frameCount)
+      );
+      
+      requestAnimationFrame(() => updateImage(frameIndex + 1));
+      
+      // SCROLL HINTS
+      if (frameIndex < 25) {
+        canvasText.textContent = "Scrollen maar..";
+      } 
+      if (frameIndex > 25) {
+        canvasText.textContent = "Ja, dit gaat goed";
+      } 
+      if (frameIndex > 75) {
+        canvasText.textContent = "Nog een beetje meer";
+      } 
+      if (frameIndex > 115) {
+        canvasText.textContent = "De laptop is bereikt!";
+      } 
+
+      // HIDE CANVAS IF SCROLLED TO LAST FRAME
+      if (frameIndex == (frameCount - 1)) {
+        canvasSection.classList.add("hidden");
+      } else {
+        canvasSection.classList.remove("hidden");
+      }
+
+      console.log(frameIndex);
+    });
+
+    preloadImages();
+  }
 
 
 

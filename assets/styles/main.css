@@ -5,6 +5,7 @@
     --font-outfit: 'Outfit', sans-serif;
 
     --wrapper-width: 1200px;
+    --wrapper-small-width: 600px;
 
     --color-white: #FFFFFF;
     --color-black: #000000;
@@ -139,6 +140,9 @@ section.landing-render strong {
     transform: translateX(-50%);
     transition: 250ms;
 }
+section.landing-render video {
+    display: none;
+}
 
 
 
@@ -161,7 +165,6 @@ section.loading-overlay {
 }
 section.loading-overlay svg {
     position: absolute;
-    /* height: 22.7%; */
     height: 21%;
     fill: none;
     stroke-dasharray: 250;
@@ -854,7 +857,6 @@ main section.dashboard > ul > li:nth-of-type(10) {
     flex-direction: column;
     justify-content: space-between;
     padding: 1.65em 2.5em 1.5em 2.5em;
-    /* padding: 1.5em 1.75em; */
 }
 main section.dashboard > ul > li:nth-of-type(10) h2 {
     font-size: 1.45em;
@@ -869,7 +871,6 @@ main section.dashboard > ul > li:nth-of-type(10) p {
     margin-top: 0.65em;
 }
 main section.dashboard > ul > li:nth-of-type(10) a {
-    /* align-self: flex-start; */
     margin-left: -1em;
 }
 
@@ -879,10 +880,6 @@ main section.dashboard > ul > li:nth-of-type(11) {
 
 main section.dashboard > ul > li:nth-of-type(12) {
     grid-column: span 2;
-}
-
-main section.dashboard > ul > li:nth-of-type(13) {
-    /* grid-column: span 2; */
 }
 
 /* GRID ITEM PROJECT */
@@ -918,6 +915,7 @@ main section.dashboard > ul > li:not(:nth-of-type(4)) > a svg {
 main section.dashboard > ul > li:not(:nth-of-type(4)):hover > a svg {
     transform: translateX(0.25em);
 }
+
 
 
 /* CONTENT PAGE -------------------------------- */
@@ -1099,6 +1097,7 @@ main section.project-details-grid ul li {
     border: 2px solid var(--color-darkish-highlight);
     border-radius: 1.65em;
     overflow: hidden;
+    line-height: 0;
 }
 /* GRID LAYOUT 1 (6 ITEMS) */
 main section.project-details-grid.grid-layout-1 ul li:nth-of-type(1),
@@ -1182,12 +1181,63 @@ main section.project-details-grid ul li.full-image img {
     object-fit: cover;
 }
 
-/* LONG ABOUT ME TEXT ---------- */
-
-
-
-
-
+/* ABOUT ME PAGE ---------- */
+main.about-me {
+    margin-top: 5em;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: rgb(255 255 255 / 0.8);
+}
+main.about-me article {
+    margin: 0 auto;
+    width: 90%;
+    max-width: var(--wrapper-small-width);
+}
+main.about-me article h2 {
+    margin-bottom: 0.65em;
+    /* padding: 0 1.3em; */
+    font-size: 2.25em;
+    font-weight: 600;
+    color: var(--color-white);
+}
+main.about-me article p {
+    margin-bottom: 1.25em;
+    /* padding: 0 3em; */
+    line-height: 1.45em;
+}
+main.about-me article p:last-of-type {
+    margin-bottom: 0;
+}
+main.about-me article a {
+    position: relative;
+    background: -webkit-linear-gradient(-45deg, var(--color-gradient-primary), var(--color-gradient-secondary), var(--color-gradient-primary));
+    background-size: 200%;
+    background-position: top left;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 850ms ease;
+}
+main.about-me article a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.1em;
+    width: 100%;
+    background-image: linear-gradient(90deg, var(--color-gradient-primary) 0%, var(--color-gradient-secondary) 50%, var(--color-gradient-primary) 100%);
+    background-size: 200%;
+    background-position: center left;
+    border-radius: 0.1em;
+    height: 0.1em;
+    transition: 850ms ease;
+}
+main.about-me article a:hover {
+    background-position: bottom right;
+}
+main.about-me article a:hover::after {
+    background-position: center right;
+}
 
 
 
@@ -1304,7 +1354,199 @@ footer > p {
 
 
 
+/* MEDIA QUERIES -------------------------------- */
+/* MEDIA QUERIES -------------------------------- */
+/* ULTRA WIDE */
+@media (min-width: 3000px) {
+    header {
+        padding: 0 7.5em;
+    }
+    section.loading-overlay svg {
+        height: 22.7%;
+    }
+}
 
+/* TRIPLE COLUMN - SMALL LAPTOP / LARGE TABLET */
+@media (max-width: 1350px) {
+    :root {
+        --wrapper-width: 900px;
+    }
+    main section.dashboard > ul {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    main section.dashboard > ul > li:nth-of-type(7) {
+        height: calc((var(--wrapper-width) / 3) - 12px);
+    }
+    main section.dashboard > ul > li:nth-of-type(11),
+    main section.dashboard > ul > li:nth-of-type(12) {
+        aspect-ratio: 1;
+        grid-column: unset;
+    }
+    main section.dashboard > ul > li:nth-of-type(11).large-contain-background-image > img {
+        object-fit: cover;
+    }
+    main section.project-details-info > section:first-of-type ul {
+        flex-wrap: wrap;
+    }
+    main section.project-details-grid ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* DOUBLE COLUMN - SMALL TABLET */
+@media (max-width: 1000px) {
+    :root {
+        --wrapper-width: 590px;
+        --wrapper-small-width: 590px;
+    }
+    section.landing-render {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 1000;
+        transition: 450ms ease;
+    }
+    section.landing-render canvas,
+    section.landing-render strong {
+        display: none;
+    }
+    section.landing-render video {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    section.landing-render.finished {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    main section.dashboard > ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    main section.dashboard > ul > li:nth-of-type(7) {
+        height: calc((var(--wrapper-width) / 2) - 8px);
+    }
+    main section.project-details-info {
+        flex-direction: column;
+    }
+    main section.project-details-grid ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer > ul > li:first-of-type {
+        display: none;
+    }
+    footer > ul > li:last-of-type > a > ul > li strong {
+        font-size: 1.1em;
+    }
+}
+
+/* SINGLE COLUMN - MOBILE */
+@media (max-width: 700px) {
+    :root {
+        --wrapper-width: 288px;
+        --wrapper-small-width: 288px;
+    }
+    header {
+        justify-content: center;
+        padding: 0;
+        font-size: 0.95em;
+    }
+    header > div {
+        display: none;
+    }
+
+    main section.dashboard > ul {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+        grid-auto-flow: unset;
+        grid-gap: unset;
+        gap: 1em;
+    }
+    main section.dashboard > ul > li {
+        padding: 2.15em 2.2em;
+        font-size: 1em;
+    }
+    main section.dashboard > ul > li:nth-of-type(1) {
+        flex-direction: column;
+    }
+    main section.dashboard > ul > li:nth-of-type(1) div {
+        text-align: center;
+    }
+    main section.dashboard > ul > li:nth-of-type(1) div img {
+        margin: 0.5em auto 0 auto;
+        height: 7em;
+        width: 7em;
+    }
+    main section.dashboard > ul > li:nth-of-type(1) div h2 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+    main section.dashboard > ul > li.grid-item-project {
+        aspect-ratio: 1 / 2;
+    }
+    main section.dashboard > ul > li:nth-of-type(7) {
+        height: unset;
+    }
+    main section.dashboard > ul > li:nth-of-type(7)::before,
+    main section.dashboard > ul > li:nth-of-type(7)::after {
+        transform: translateY(-47.5%);
+    }
+    main section.dashboard > ul > li:nth-of-type(7) > ul {
+        margin-top: 1em;
+    }
+    main section.dashboard > ul > li:nth-of-type(10) {
+        padding: 2.15em 2.2em 1.5em 2.2em;
+    }
+    main section.dashboard > ul > li:nth-of-type(10) h2 {
+        font-size: 1.75em;
+    }
+    main section.dashboard > ul > li:nth-of-type(10) a {
+        margin-left: -0.65em;
+    }
+    main section.dashboard > ul > li:nth-of-type(11), 
+    main section.dashboard > ul > li:nth-of-type(12),
+    main section.dashboard > ul > li:nth-of-type(13) {
+        aspect-ratio: 1;
+    }
+    main section.project-details-grid ul {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: unset;
+        grid-auto-flow: unset;
+        grid-gap: unset;
+        gap: 1em;
+    }
+
+    footer {
+        margin-top: 5em;
+    }
+    footer > ul {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 1.5em;
+    }
+    footer > ul > li:nth-of-type(2) {
+        order: 2;
+    }
+    footer > ul > li:nth-of-type(3) {
+        order: 1;
+    }
+    footer > ul > li:last-of-type > a > ul {
+        gap: 1em;
+    }
+    footer > ul > li:last-of-type > a > ul > li strong {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+    footer > ul > li:last-of-type > a > ul > li span {
+        font-size: 0.9em;
+    }
+}
 
 
 
@@ -1315,3 +1557,5 @@ footer > p {
         stroke-dashoffset: 3000;
     }
 }
+
+
