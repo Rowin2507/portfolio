@@ -479,6 +479,7 @@ main section.dashboard > ul > li:nth-of-type(2) > div {
 }
 main section.dashboard > ul > li:nth-of-type(2) > div .gmnoprint, 
 main section.dashboard > ul > li:nth-of-type(2) > div .gm-svpc,
+main section.dashboard > ul > li:nth-of-type(2) > div .gm-style-cc,
 main section.dashboard > ul > li:nth-of-type(2) > div .gm-fullscreen-control,
 main section.dashboard > ul > li:nth-of-type(2) > div div > a > div > img {
     display: none;
