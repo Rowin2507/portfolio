@@ -460,14 +460,15 @@ main section.dashboard > ul > li:nth-of-type(1) p {
     line-height: 1.3em;
 }
 main section.dashboard > ul > li:nth-of-type(1) strong {
-    /* display: inline-block;
-    margin-bottom: -1em; */
-    font-size: 2em;
-    font-weight: 600;
-    color: var(--color-red);
+    font-weight: 500;
     background: -webkit-linear-gradient(-45deg, var(--color-gradient-primary), var(--color-gradient-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+main section.dashboard > ul > li:nth-of-type(1) strong:first-of-type {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--color-gradient-secondary);
 }
 
 main section.dashboard > ul > li:nth-of-type(2) {
@@ -863,7 +864,7 @@ main section.dashboard > ul > li:nth-of-type(10) h2 {
     font-size: 1.45em;
     font-weight: 600;
     line-height: 1.2em;
-    color: var(--color-red);
+    color: var(--color-gradient-secondary);
     background: -webkit-linear-gradient(-45deg, var(--color-gradient-primary), var(--color-gradient-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
